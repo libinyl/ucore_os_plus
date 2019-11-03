@@ -577,7 +577,7 @@ add_entry(struct sfs_fs *sfs, struct cache_inode *current,
 	{
 		entry_big_endian(entry);
 		//printf ("entry: ino = %d\n", entry_ino);
-		write_block(sfs, endian_buffer, sizeof(entry->name), entry_ino);
+		write_block(sfs, endian_buffer, sizeof(struct sfs_entry), entry_ino);
 	}
 	append_block_slot(sfs, current, entry_ino, name);
 	file->inode.nlinks++;
